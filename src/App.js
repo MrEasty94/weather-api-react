@@ -11,10 +11,12 @@ function App() {
   const [customWeather, setCustomWeather] = useState([]);
   const [defaultWeather, setDefaultWeather] = useState({});
 	const [loading, setLoading] = useState(true);
+  const [reload, setReload] = useState(false);
 
  const fetchWeather = async () => {
 	
     setLoading(true);
+    console.log('Rendering');
   
       try {
         const response = await fetch(DEFAULT_API_URL);
@@ -24,7 +26,7 @@ function App() {
         setTimeout(() => {
           setLoading(false);
         }, 1000);
-        
+        setReload(false)
       }
   
       catch(err){

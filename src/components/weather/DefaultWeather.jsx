@@ -1,6 +1,6 @@
 
 
-function DefaultWeather({ defaultWeather, isLoading }) {
+function DefaultWeather({ defaultWeather, isLoading, reloadData }) {
 
 	return (<>
 			{isLoading ? <p>Loading...</p> : null}
